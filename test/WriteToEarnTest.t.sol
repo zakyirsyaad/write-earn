@@ -21,15 +21,13 @@ contract WriteToEarnTest is Test {
         writeToken = new WriteAI();
         writeToEarn = new WriteToEarn(address(writeToken));
 
-        // Transfer ownership of WriteAI token to WriteToEarn contract
-        writeToken.transferOwnership(address(writeToEarn));
-
-        // Mint tokens to WriteToEarn contract for rewards
-        writeToken.mint(address(writeToEarn), 1000000 * 10 ** 18); // 1M tokens for rewards
-
-        // Mint tokens to test users
+        // Mint tokens while the test contract is still the owner
+        writeToken.mint(address(writeToEarn), 1000000 * 10 ** 18);
         writeToken.mint(alice, 100000 * 10 ** 18);
         writeToken.mint(bob, 100000 * 10 ** 18);
+
+        // Transfer ownership of WriteAI token to WriteToEarn contract
+        writeToken.transferOwnership(address(writeToEarn));
     }
 
     function test_PostStory() public {
