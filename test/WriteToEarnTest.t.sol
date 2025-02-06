@@ -3,7 +3,7 @@ pragma solidity ^0.8.19;
 
 import "forge-std/Test.sol";
 import "../src/WriteToEarn.sol";
-import "../src/WriteAIToken.sol";
+import "../src/WriteAI.sol";
 
 contract WriteToEarnTest is Test {
     WriteToEarn public writeToEarn;

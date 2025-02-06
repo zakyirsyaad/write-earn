@@ -3,7 +3,7 @@ pragma solidity ^0.8.19;
 
 // import "lib/openzeppelin-contracts/contracts/access/Ownable.sol";
 import "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
-import "src/WriteAIToken.sol";
+import "../src/WriteAI.sol";
 
 contract WriteToEarn {
     // constructor() Ownable(msg.sender) {}
